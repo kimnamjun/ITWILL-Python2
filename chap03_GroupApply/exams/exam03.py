@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 
 election = pd.read_csv('../../../data/election_2012.csv', encoding='ms949')
@@ -54,6 +55,7 @@ ptable = pd.pivot_table(two_cand_nm,
                         aggfunc=sum)
 print(ptable.head())
 
+print('-'*80)
 
 # 문2)
 # ptable2는 한 쪽이 결측치가 있으면 표시가 안됨
@@ -64,3 +66,9 @@ print(ptable.head())
 
 ptable3 = ptable.loc[ptable.sum(axis=1) >= 2000000]
 print(ptable3)
+
+print('-'*80)
+
+# 추가 문제) 두 후보자 모두 200만 달러 이상의 후원금을 지불한 직업군 필터링
+ptable4 = ptable.loc[np.logical_and(ptable['Obama, Barack'] >= 2000000, ptable['Romney, Mitt'] >= 2000000)]
+print(ptable4)

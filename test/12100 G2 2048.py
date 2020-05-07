@@ -54,6 +54,7 @@ def large():
         ret = max(ret, max(row))
     return ret
 
+
 ans = 0
 original_board = list()
 n = int(input())
@@ -67,5 +68,6 @@ for p in perm:
     for i in range(5):
         action(p[i])
         ans = max(ans, large())
+    print(p, ans)
 
 print(ans)

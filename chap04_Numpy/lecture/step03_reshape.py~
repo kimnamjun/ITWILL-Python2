@@ -1,0 +1,6 @@
+"""
+1. image shape : 3차원(세로, 가로, 컬러)
+2. reshape
+"""
+import numpy as np
+from matplotlib.image import imread
