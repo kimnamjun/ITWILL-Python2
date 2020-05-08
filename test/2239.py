@@ -26,9 +26,16 @@ def find(board, cell):
     num.remove('0')
     return sorted(list(num), reverse=True)
 
+# cell이 들어왔을 때, board가 올바른지 확인
+def vaild(board, cell):
+    pass
+
 def play(board, start):
     print(start)
-    for i in range(start, 64):
+    for i in range(start, 82):
+        if i == 81:
+            return board
+
         if board[i] == '0':
             for j in find(board, i):
                 board = board[:i] + str(j) + board[i+1:]

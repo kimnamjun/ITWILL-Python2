@@ -8,12 +8,14 @@ step04_axis_dot 관련문제 :
 
 import numpy as np
 
-print('weight data')
+weight = np.random.randn(3, 3)
+print('weight data', weight)
 
-print('x data')
+X = np.arange(3) + 1
+print('x data', X)
 
-print('hidden')
-
+hidden = np.dot(weight, X)
+print('hidden', hidden)
 
 
 
