@@ -48,3 +48,25 @@ plt.show()
 
 new_cospi_HL['2016-02'].plot(title='2016-02 year vs Low')
 plt.show()
+
+
+# 4. 이동평균기능
+
+# 1) 5일 단위 이동 평균 : 마지막 5일째 이동(5일 : 주말 제외 일주일)
+roll_mean5 = pd.Series.rolling(new_cospi_HL, window=5, center=False).mean()
+# window : n일을 하나의 윈도우로 설정
+# center : (기본값 False) : 가장 빠른 날 기준, (True) : 가운데 날 기준
+print(roll_mean5)
+
+# 2) 3) 10일, 20일
+roll_mean5 = pd.Series.rolling(new_cospi_HL.High, window=5, center=False).mean()
+roll_mean10 = pd.Series.rolling(new_cospi_HL.High, window=10, center=False).mean()
+roll_mean20 = pd.Series.rolling(new_cospi_HL.High, window=20, center=False).mean()
+
+# rolling mean 시각화 : 기간을 길게 잡을수록 선이 단순(추세선 평활(스뮤딩))
+new_cospi_HL.High.plot(color='b', label='High column')
+roll_mean5.plot(color='r', label='rolling mean 5days')
+roll_mean10.plot(color='green', label='rolling mean 10days')
+roll_mean20.plot(color='orange', label='rolling mean 20days')
+plt.legend()
+plt.show()
