@@ -113,6 +113,7 @@ print(digits.target.shape)
 '''
 print(digits)
 # 8x8 image of integer pixels in the range 0..16
+# ?
 
 np.random.seed(0)
 N = 4 # 4행

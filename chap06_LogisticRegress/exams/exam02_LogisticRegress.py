@@ -19,7 +19,20 @@ wine_x = wine.data # x변수
 wine_y = wine.target # y변수
 
 # 3. train/test split(7:3)
+x_train, x_test, y_train, y_test = train_test_split(wine_x, wine_y, test_size=0.3)
 
 # 4. model 생성  : solver='lbfgs', multi_class='multinomial'
+lr = LogisticRegression(random_state=123,
+                        solver='lbfgs',
+                        multi_class='multinomial',
+                        max_iter=200,  # 반복횟수
+                        n_jobs=1,      # 병렬처리 cpu 수
+                        verbose=1)     # 학습과정 출력여부
+model = lr.fit(x_train, y_train)
 
 # 5. 모델 평가 : accuracy, confusion matrix
+y_pred = model.predict(x_test)
+print(y_pred)
+acc = model.score(x_test, y_test)  # 0.9815 : random_state에 따라 오락가락
+print(acc)
+con_mat = metrics.confusion_matrix(y_test, y_pred)

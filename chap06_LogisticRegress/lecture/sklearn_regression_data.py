@@ -37,7 +37,7 @@ tg = tg.cat.rename_categories(iris.target_names) # 카테고리 이름 변경
 
 iris_df['species'] = tg # target 추가 
 iris_df.head()
-iris_df.info() 
+iris_df.info()
 
 
 # 차트 분석 : 각 특징별 타겟변수의 분포현황  
