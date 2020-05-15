@@ -42,7 +42,7 @@ err = abs(Y_pred - Y_true)
 print(err)
 
 
-# 2. 회귀모델 시각화
+# 회귀모델 시각화
 from pylab import plot, legend, show
 plot(X, Y_true, 'b.')   # 산점도
 plot(X, Y_pred, 'r.-')  # 회귀선
@@ -50,7 +50,7 @@ legend(['x, y scatter', 'regress model line'])
 show()
 
 
-# 다중 선형회귀모델
+# 2. 다중 선형회귀모델
 from statsmodels.formula.api import ols  # function
 wine = pd.read_csv('../../../data/winequality-both.csv')
 

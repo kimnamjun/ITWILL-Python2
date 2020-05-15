@@ -21,6 +21,7 @@ with open('../data/news_data.pickle', mode='rb') as file:
 print(news_data)
 
 ex_sent = [kkma.sentences(sent)[0] for sent in news_data]  # 문장 추출
+
 nouns_word = []
 
 for sent in ex_sent:
