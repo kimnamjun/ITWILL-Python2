@@ -76,15 +76,15 @@ cancer_y = cancer.target
 print(np.shape(cancer_x)) # (569, 30) : matrix
 print(np.shape(cancer_y)) # (569,) : vector
 
-cencar_df = pd.DataFrame(cancer_x, columns=cancer.feature_names)
+cancer_df = pd.DataFrame(cancer_x, columns=cancer.feature_names)
 tg = pd.Series(cancer_y, dtype="category")
 tg = tg.cat.rename_categories(cancer.target_names)
-cencar_df['class'] = tg
-cencar_df.tail()
+cancer_df['class'] = tg
+cancer_df.tail()
 
 # 타겟 변수 기준 주요변수 간 산점도 
 sn.pairplot(vars=["worst radius", "worst texture", "worst perimeter", "worst area"], 
-             hue="class", data=cencar_df)
+             hue="class", data=cancer_df)
 plt.show()
 
 
