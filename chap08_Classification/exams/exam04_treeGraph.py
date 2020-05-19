@@ -11,8 +11,9 @@
 """
 
 import pandas as pd
+from sklearn.tree import DecisionTreeClassifier, export_graphviz
 
-tree_data = pd.read_csv("D:/ITWILL/4_Python-II/data/tree_data.csv")
+tree_data = pd.read_csv("C:/ITWILL/4_Python-II/data/tree_data.csv")
 print(tree_data.info())
 '''
 iq         6 non-null int64 - iq수치
@@ -22,3 +23,9 @@ owner      6 non-null int64 - 사업가 유무
 unidegree  6 non-null int64 - 학위 유무
 smoking    6 non-null int64 - 흡연 유무
 '''
+x = tree_data.iloc[:,:5]
+y = tree_data.iloc[:,5]
+cols = tree_data.columns[:5]
+
+model = DecisionTreeClassifier().fit(x, y)
+export_graphviz(model, "C:/ITWILL/4_Python-II/data/tree_data.dot", feature_names=cols)

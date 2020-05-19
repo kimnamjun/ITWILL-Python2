@@ -62,8 +62,8 @@ def knn(a, b, k):
         key = class_category[sort_dist[i]]
         class_result[key] = class_result.get(key, 0) + 1
 
-    vote = max(reversed(list(class_result.items())), key=lambda x: x[1])[0]
-
+    # vote = max(reversed(list(class_result.items())), key=lambda x: x[1])[0]
+    vote = max(class_result, key=class_result.get)
     return vote
 
 a = int(input("단맛 입력(1~10) : "))

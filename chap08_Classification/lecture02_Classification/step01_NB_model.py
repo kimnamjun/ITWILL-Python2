@@ -2,6 +2,9 @@
 Naive Bayes 모델
 GaussianNB : X 변수가 실수형이고, 정규분포 형태
 MultinomialNB : 희소행렬과 같은 고차원 데이터를 이용하여 다항분류
+
+희소행렬을 이용한 텍스트 분류 등
+고차원의 X 변수에 대해서 높은 결과를 보임
 """
 import pandas as pd
 from sklearn.model_selection import train_test_split
