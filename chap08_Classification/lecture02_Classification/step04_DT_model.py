@@ -92,3 +92,4 @@ test_score = model.score(x_test, y_test)     # 0.9815
 
 export_graphviz(model, "C:/ITWILL/4_Python-II/data/DT_tree_graph.dot", max_depth=3,
                 feature_names=x_name, class_names=True)
+# gvedit.exe 설치 후 실행하면 됨
